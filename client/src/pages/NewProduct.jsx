@@ -115,6 +115,7 @@ const NewProduct = () => {
           <select
             name="section"
             id="section"
+            defaultValue="Men"
             style={{
               flex: 1,
               minwidth: "40%",

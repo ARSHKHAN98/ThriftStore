@@ -84,9 +84,7 @@ const Product = ({ item, func }) => {
           const userid = user._id;
           const productid = item._id;
 
-          const isInWishlist = productss.data.find(
-            ({ check }) => check === userid + productid
-          );
+          const isInWishlist = productss.data.find(({ check }) => check === userid + productid);
 
           if (isInWishlist) {
             setPresent(true);
@@ -129,19 +127,6 @@ const Product = ({ item, func }) => {
     }
   };
 
-  // const [image, setImage] = useState(item.img);
-
-  // const getProduct = async () => {
-  //   try {
-  //     const res = await publicRequest.get("/products/find/" + item.productid);
-  //     setImage(res.data.img);
-  //   } catch (e) {
-  //     console.log(e);
-  //   }
-  // };
-  // if (item.productid) {
-  //   getProduct();
-  // }
   const addToCart = async () => {
     try {
       const userid = user._id;
@@ -166,16 +151,12 @@ const Product = ({ item, func }) => {
         if (item.productid) {
           const userid = user._id;
           const productid = item.productid;
-          const isInCart = products.data.find(
-            ({ check }) => check === userid + productid
-          );
+          const isInCart = products.data.find(({ check }) => check === userid + productid);
           if (isInCart) setInCart(true);
         } else {
           const userid = user._id;
           const productid = item._id;
-          const isInCart = products.data.find(
-            ({ check }) => check === userid + productid
-          );
+          const isInCart = products.data.find(({ check }) => check === userid + productid);
           if (isInCart) setInCart(true);
         }
       }
@@ -218,11 +199,11 @@ const Product = ({ item, func }) => {
         <Cart />
         <Icon>
           {item.productid ? (
-            <Link to={`/product/${item.productid}`} style={{ color: "black" }}>
+            <Link key={item._id} to={`/product/${item.productid}`} style={{ color: "black" }}>
               <SearchOutlinedIcon />
             </Link>
           ) : (
-            <Link to={`/product/${item._id}`} style={{ color: "black" }}>
+            <Link key={item._id} to={`/product/${item._id}`} style={{ color: "black" }}>
               <SearchOutlinedIcon />
             </Link>
           )}
