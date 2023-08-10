@@ -4,8 +4,7 @@ import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import Badge from "@mui/material/Badge";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import { mobile } from "../responsive";
-import { useSelector } from "react-redux";
-import { Link, useNavigate, useResolvedPath } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { publicRequest } from "../requestMethod";
 import { useLocation } from "react-router";
 
@@ -112,10 +111,7 @@ const Navbar = () => {
         <Left>
           <Language>EN</Language>
           <SearchContainer>
-            <Input
-              placeholder="Search Category"
-              onChange={(e) => setCatToSearch(e.target.value)}
-            />
+            <Input placeholder="Search Category" onChange={(e) => setCatToSearch(e.target.value)} />
             <SearchOutlinedIcon
               style={{
                 color: "gray",
